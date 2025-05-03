@@ -35,6 +35,5 @@ def build_mini_xception(input_shape=(48, 48, 1), num_classes=7):
 
     return model
 
-# Create and print summary of the model
 model = build_mini_xception()
 model.summary()

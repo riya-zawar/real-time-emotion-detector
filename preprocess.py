@@ -58,5 +58,3 @@ if not os.path.exists('preprocessed'):
     
 # Save class indices for later mapping
 np.save("preprocessed/class_indices.npy", train_generator.class_indices)
-
-print("✅ Data generators created.")

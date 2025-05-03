@@ -45,7 +45,7 @@ while True:
         cv2.putText(frame, label_text, (x + 5, y - 10), 
                     cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 2)
 
-    cv2.imshow('Real-Time Emotion Detector', frame)
+    cv2.imshow('Real-Time Emotion Detector (enter q to quit)', frame)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break

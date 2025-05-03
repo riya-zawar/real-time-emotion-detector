@@ -8,7 +8,7 @@ model = build_mini_xception()
 
 # Set up early stopping and model checkpoint
 early_stop = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
-checkpoint = ModelCheckpoint('mini_xception_best.h5', monitor='val_loss', save_best_only=True)
+checkpoint = ModelCheckpoint('mini_xception_best.keras', monitor='val_loss', save_best_only=True)
 
 # Train the model
 history = model.fit(
@@ -19,6 +19,4 @@ history = model.fit(
 )
 
 # Save final model
-model.save('mini_xception_final.h5')
-
-print("✅ Model training complete.")
+model.save('mini_xception_final.keras')
