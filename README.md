@@ -1,1 +1,27 @@
-# real-time-emotion-detector
+# Project: Real-Time Emotion Detection from Webcam
+
+- Objective: Detect human emotions (Angry, Disgust, Fear, Happy, Neutral, Sad, Surprise) from webcam input using a deep learning model.
+- Model Architecture:
+  - Based on Mini-Xception — a lightweight variant of the Xception architecture designed for efficiency.
+  - Uses SeparableConv2D layers, Batch Normalization, ReLU activation, and Global Average Pooling.
+- Dataset:
+  - Trained on FER-2013, a facial expression recognition dataset with grayscale 48x48 images.
+  - Dataset is imbalanced, with some emotions underrepresented (e.g., Disgust).
+  - Data balancing techniques like class weights and undersampling were tested but not used, as they reduced accuracy.
+- Training Details:
+  - Optimizer: Adam
+  - Loss: Categorical Crossentropy
+  - Metrics: Accuracy
+  - Callbacks: EarlyStopping, ReduceLROnPlateau, and ModelCheckpoint to improve generalization and prevent overfitting.
+- Real-Time Detection:
+  - Webcam input captured using OpenCV.
+  - Face regions detected using Haar Cascade classifier.
+  - Detected faces preprocessed (grayscale, resized, normalized) and passed to the model.
+  - Predicted emotion shown as text and color-coded bounding box (e.g., red for Angry, green for Happy).
+- Limitations:
+  - Lower accuracy (52.95%) due to limited and imbalanced training data.
+  - Performance can vary with lighting, camera quality, and facial occlusion.
+- Highlights:
+  - Real-time emotion inference with smooth frame processing.
+  - Lightweight model suitable for low-resource environments.
+  - Clean, user-friendly interface with emotion feedback overlay.
